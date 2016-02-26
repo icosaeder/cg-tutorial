@@ -55,7 +55,7 @@ bool initOpenGL()
     // Initialize OpenGL context with.
     glfwMakeContextCurrent(g_window);
 
-    // Set internal GLEW variable to sctivate OpenGL core profile.
+    // Set internal GLEW variable to activate OpenGL core profile.
     glewExperimental = true;
 
     // Initialize GLEW functions.
@@ -68,8 +68,8 @@ bool initOpenGL()
     // Ensure we can capture the escape key being pressed.
     glfwSetInputMode(g_window, GLFW_STICKY_KEYS, GL_TRUE);
 
-    // Set callback for window resizing event.
-    glfwSetWindowSizeCallback(g_window, reshape);
+    // Set callback for framebuffer resizing event.
+    glfwSetFramebufferSizeCallback(g_window, reshape);
 
     return true;
 }
@@ -89,7 +89,7 @@ int main()
     // Initialize graphical resources.
     init();
 
-    // Main loop until window closed or excape pressed.
+    // Main loop until window closed or escape pressed.
     while (glfwGetKey(g_window, GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(g_window) == 0)
     {
         // Draw scene.
